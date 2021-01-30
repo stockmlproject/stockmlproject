@@ -32,12 +32,10 @@ def close_predict():
 
     if(opn != None and hgh != None and low != None ):
         try:
-            float(opn)
-            float(hgh)
-            float(low)
             features = [opn, hgh, low]
             # Convert features to array
             array_features = [np.array(features)]
+            array_features = array_features.astype(np.float64)
             # Predict features
             prediction = close_model.predict(array_features)
  
