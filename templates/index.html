@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+  <br>
+  <h4 align="center"> This page allows you to make a prediction for the close value in currencies stocks, for now is only trained to predict the close value for: USD/CAD, AUD/USD, GBP/USD, EUR/USD and EUR/CHF. This program only predicts a value, but this value could be not near to the real close value, this means that you should invest with you own criterion. </h4>
+  <br>
+  <h4> You can support this project and inspire me to continue developing this website and training new models:</h4>
+
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="6DFWUVGWW3JME" />
+<input type="image" src="https://www.paypalobjects.com/en_US/ES/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img align="center" alt="" border="0" src="https://www.paypal.com/en_ES/i/scr/pixel.gif" width="1" height="1" />
+</form>
+
+<hr>
+<br>
+
+<h2> Predict close value: </h2>
+<form action = "{{url_for('close_predict')}}" method ="POST">
+  <label for="copen">Open:</label><br>
+  <input type="text" id="open" name="open"><br>
+  <label for="chigh">High:</label><br>
+  <input type="text" id="high" name="high"><br>
+  <label for="clow">Low:</label><br>
+  <input type="text" id="low" name="low">
+  <input class="btn btn-primary" type="submit" value="Predict">
+    <div id ="result">
+		<strong style="color:red">The result is: {{resultclose}}</strong>
+    <strong style="color:red">{{result}}</strong>
+	</div>
+</form>
+
+<br>
+
+<h2> Predict high value: </h2>
+<form action = "{{url_for('close_predict')}}" method ="POST">
+  <label for="hprice">Price:</label><br>
+  <input type="text" id="price" name="price"><br>
+  <label for="hopen">Open:</label><br>
+  <input type="text" id="openh" name="openh"><br>
+  <label for="hlow">Low:</label><br>
+  <input type="text" id="lowh" name="lowh">
+  <input class="btn btn-primary" type="submit" value="Predict">
+    <div id ="result">
+    <strong style="color:red">The result is: {{resulthigh}}</strong>
+    <strong style="color:red">{{result}}</strong>
+  </div>
+</form>
+
+</body>
+</html>
