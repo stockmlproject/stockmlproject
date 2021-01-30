@@ -32,10 +32,10 @@ def close_predict():
 
     if(opn != None and hgh != None and low != None ):
         try:
-            features = [opn, hgh, low]
+            features = [float(i) for i in request.form.values()]
             # Convert features to array
+            
             array_features = [np.array(features)]
-            array_features = array_features.astype(np.float64)
             # Predict features
             prediction = close_model.predict(array_features)
  
