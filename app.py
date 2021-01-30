@@ -5,10 +5,10 @@ from flask import Flask, request, render_template
 app = Flask(__name__) #Create app
 
 #Load models
-close = 'stockmlproject/modelo_cierre.sav'
+close = 'modelo_cierre.sav'
 close_model = pickle.load(open(close, 'rb'))
 
-high = 'stockmlproject/modelo_high.sav'
+high = 'modelo_high.sav'
 high_model = pickle.load(open(high, 'rb'))
 
 # Bind home function to URL
