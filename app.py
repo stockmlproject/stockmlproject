@@ -43,7 +43,7 @@ def close_predict():
             return render_template('index.html', resultclose = output)
        
         except:
-            return render_template('index.html', resultclose = "Error")
+            return render_template('index.html', resultclose = "Error in close")
 
     elif(prch != None and opnh != None and lowh != None ):
         try:        
@@ -57,9 +57,9 @@ def close_predict():
             return render_template('index.html', resulthigh = output)
        
         except:
-            return render_template('index.html', resulthigh = "Error")
+            return render_template('index.html', resulthigh = "Error in high")
    
-    return render_template('index.html', result = "Error")
+    return render_template('index.html', result = "Error final")
 
 if __name__ == '__main__':
     #Run the application
