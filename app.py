@@ -34,7 +34,6 @@ def close_predict():
         try:
             features = [float(i) for i in request.form.values()]
             # Convert features to array
-            
             array_features = [np.array(features)]
             # Predict features
             prediction = close_model.predict(array_features)
@@ -43,11 +42,11 @@ def close_predict():
             return render_template('index.html', resultclose = output)
        
         except:
-            return render_template('index.html', resultclose = "Error in close")
+            return render_template('index.html', resultclose = "Invalid input")
 
     elif(prch != None and opnh != None and lowh != None ):
         try:        
-            features = [prch, opnh, lowh]
+            features = [float(i) for i in request.form.values()]
             # Convert features to array
             array_features = [np.array(features)]
             # Predict features
@@ -57,9 +56,9 @@ def close_predict():
             return render_template('index.html', resulthigh = output)
        
         except:
-            return render_template('index.html', resulthigh = "Error in high")
+            return render_template('index.html', resulthigh = "Invalid input")
    
-    return render_template('index.html', result = "Error final")
+    return render_template('index.html', result = "Invalid input")
 
 if __name__ == '__main__':
     #Run the application
