@@ -10,11 +10,11 @@ import warnings
 
 warnings.filterwarnings('ignore') #We will ignore the different warnings 
 
-usdcad = pd.read_csv('D:\Documentos\Proyecto ML\DATA\\usdcad.csv')
-audusd = pd.read_csv('D:\Documentos\Proyecto ML\DATA\\audusd.csv')
-gbpusd = pd.read_csv('D:\Documentos\Proyecto ML\DATA\gbpusd.csv')
-eurusd = pd.read_csv('D:\Documentos\Proyecto ML\DATA\eurusd.csv')
-eurchf = pd.read_csv('D:\Documentos\Proyecto ML\DATA\eurchf.csv')
+usdcad = pd.read_csv('usdcad.csv')
+audusd = pd.read_csv('audusd.csv')
+gbpusd = pd.read_csv('gbpusd.csv')
+eurusd = pd.read_csv('eurusd.csv')
+eurchf = pd.read_csv('eurchf.csv')
 
 data = pd.concat([usdcad, audusd, gbpusd, eurusd, eurchf]) 
 
@@ -34,7 +34,7 @@ print("Accuracy train LinearRegression x,y: {:.3f}".format(clf.score(x_train, y_
 print("Accuracy test LinearRegresion x,y: {:.3f}".format(clf.score(x_test, y_test)))
 
 
-#Make a prediction
+#Make a test prediction
 X = [[1.2126, 1.2158, 1.2076]]
 predicted = clf.predict(X)
 print("Predicted value for último in LR:", predicted.round(4))
